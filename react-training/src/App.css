@@ -1,3 +1,7 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
 }
@@ -14,8 +18,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +37,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.cmp-login {
+  color: white;
+}
+
+.cmp-header-menu__sub button, .cmp-login__button {
+  background: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  border: 2px solid white;
+}
+
+.cmp-header-menu {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid white;
+}
+
+.cmp-header-menu__sub {
+  float: right;
+  margin-right: 1rem;
 }
