@@ -1,17 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import LogOutButton from './LogOutButton';
-import LogInButton from './LogInButton';
+import {removeHeaderItem} from '../redux/actions/header.actions';
 
-const HeaderMenu = (props) => {
+const mapDispatchToProps = {
+    removeHeaderItem
+};
+
+const HeaderMenu = ({label, removeHeaderItem}) => {
     const removeItem = () => {
-        {/*TODO 7: BONUS ROUND, using everything you did in the previous steps, make it possible to delete these HeaderItems upon clicking on them
-        This means you'll need to create actions for it, update the reducer, figure out a way to **filter** out the correct item from the headerItems array, .. */}
+        removeHeaderItem({
+            label
+        })
     };
 
-    return <div className={'cmp-header-menu__item'}>
-        {/*TODO 5: Maybe something should get passed to this component and then displayed?*/}
+    return <div onClick={removeItem} className={'cmp-header-menu__item'}>
+        {label}
     </div>
 };
 
-export default HeaderMenu;
+export default connect(null,mapDispatchToProps)(HeaderMenu);

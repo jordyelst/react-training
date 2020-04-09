@@ -86,6 +86,12 @@ body {
 
 .cmp-header-menu__item {
     padding: 1rem;
+    padding-right: 2rem;
     margin-right: 1rem;
     border-right: 2px solid white;
+}
+
+.cmp-header-menu__right p {
+    margin: 0;
+    padding: 1rem;
 }

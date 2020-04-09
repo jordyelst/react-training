@@ -1,3 +1,5 @@
+import {ADD_HEADER_ITEM, REMOVE_HEADER_ITEM} from '../actions/header.actions';
+
 const initialState = {
     property: 'do not remove this',
     headerItems: [{
@@ -7,9 +9,16 @@ const initialState = {
 
 export const headerReducer = (state = initialState, action) => {
     switch (action.type) {
-        //TODO 4: Update this reducer to listen to the actions you just created, then update the state, always add your new header item to the existing array,
-        //Tip: make sure you don't replace the entire state, first copy it, then only replace the properties that need to be replaced
-        //maybe use the spread operator here? [...array, newItem] <- You can also do this for objects
+        case ADD_HEADER_ITEM:
+            return {
+                ...state,
+                headerItems: [...state.headerItems, action.payload]
+            };
+        case REMOVE_HEADER_ITEM:
+            return {
+                ...state,
+                headerItems: state.headerItems.filter(headerItem => headerItem.label !== action.payload.label)
+            };
         default:
             return state;
     }

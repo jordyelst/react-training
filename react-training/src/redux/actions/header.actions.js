@@ -1,1 +1,10 @@
-//TODO 3: Add actions here to add/remove header items to the list of header items
+export const ADD_HEADER_ITEM = 'ADD_HEADER_ITEM';
+export const REMOVE_HEADER_ITEM = 'REMOVE_HEADER_ITEM';
+
+export const addHeaderItem = (payload) => ({
+    type: ADD_HEADER_ITEM, payload
+});
+
+export const removeHeaderItem = (payload) => ({
+    type: REMOVE_HEADER_ITEM, payload
+});
