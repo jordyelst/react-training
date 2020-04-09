@@ -4,7 +4,8 @@ import {logInRequest, logOutRequest} from '../redux/actions/login.actions';
 
 const mapStateToProps = state => {
     const {isLoggedIn} = state.loginReducer;
-    return {isLoggedIn};
+    const {property} = state.headerReducer;
+    return {isLoggedIn, property};
 };
 
 const mapDispatchToProps = {
@@ -13,20 +14,35 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(class Login extends Component {
-    logIn = () => {
-        this.props.logInRequest();
+    state = {};
+
+    logIn = (e) => {
+        e.preventDefault();
+        this.props.logInRequest({
+            username: this.state.username
+        });
     };
 
-    logOut = () => {
+    logOut = (e) => {
+        e.preventDefault();
         this.props.logOutRequest();
     };
 
-    render () {
-        const {isLoggedIn} = this.props;
+    handleUsernameChange = (e) => {
+        this.setState({
+            username: e.target.value
+        })
+    };
 
-        return <div className={'cmp-login'}>
+    render () {
+        const {isLoggedIn, property} = this.props;
+
+        return <form className={'cmp-login'} onSubmit={(e) => isLoggedIn ? this.logOut(e) : this.logIn(e)}>
+            {!property && <p>You messed up, make sure to don't replace the entire state!</p>}
             <p>You are logged {isLoggedIn ? 'in' : 'out'}.</p>
-            <button className={'cmp-login__button'} onClick={isLoggedIn ? this.logOut : this.logIn}>{isLoggedIn ? 'Logout' : 'Login'}</button>
-        </div>
+            {!isLoggedIn && <input className={'cmp-login__input'} type={'text'} required={true} placeholder={'Username'} onChange={this.handleUsernameChange}/>}
+            <br />
+            <button type={'submit'} className={'cmp-login__button'}>{isLoggedIn ? 'Logout' : 'Login'}</button>
+        </form>
     }
 })

@@ -1,65 +1,91 @@
 body {
-  background-color: #282c34;
+    background-color: #282c34;
 }
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .cmp-login {
-  color: white;
+    color: white;
 }
 
-.cmp-header-menu__sub button, .cmp-login__button {
-  background: none;
-  border-radius: 4px;
-  padding: 1rem 2rem;
-  font-size: 24px;
-  font-weight: 900;
-  color: white;
-  border: 2px solid white;
+.cmp-header-menu__sub .cmp-header-menu__right button, .cmp-login__button {
+    background: none;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+    border: 2px solid white;
+}
+
+.cmp-header-menu__sub .cmp-header-menu__left button {
+    background: none;
+    border-radius: 4px;
+    padding: .5rem 1rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    border: 2px solid white;
 }
 
 .cmp-header-menu {
-  width: 100%;
-  padding: 1rem 2rem;
-  border-bottom: 2px solid white;
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid white;
 }
 
 .cmp-header-menu__sub {
-  float: right;
-  margin-right: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cmp-header-menu__left, .cmp-header-menu__right {
+    display: flex;
+}
+
+.cmp-login__input {
+    padding: .5rem;
+    margin-bottom: 1rem;
+}
+
+.cmp-header-menu__item {
+    padding: 1rem;
+    margin-right: 1rem;
+    border-right: 2px solid white;
 }

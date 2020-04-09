@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
 import {loginReducer} from './reducers/login.reducer';
+import {headerReducer} from './reducers/header.reducer';
 
 const combinedReducers = combineReducers({
-	loginReducer
+	loginReducer,
+	headerReducer
 });
 
 export const rootReducer = function (state, action) {
