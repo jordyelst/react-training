@@ -19,6 +19,7 @@ export const headerReducer = (state = initialState, action) => {
                 ...state,
                 headerItems: state.headerItems.filter(headerItem => headerItem.label !== action.payload.label)
             };
+        //TODO 4: Update this reducer with success actions and possibly failure actions, we're calling an API after all and we can't be sure it's always going to work
         default:
             return state;
     }

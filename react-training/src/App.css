@@ -95,3 +95,12 @@ body {
     margin: 0;
     padding: 1rem;
 }
+
+.cmp-shibes-list {
+    width: 100%;
+    height: 200px;
+}
+
+.cmp-shibes-list img {
+    height: 100%;
+}
